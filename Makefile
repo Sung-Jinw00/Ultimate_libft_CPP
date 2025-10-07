@@ -9,7 +9,7 @@ SRCS      = main.cpp $(shell find srcs -name "*.cpp")
 OBJ_DIR   = obj
 SRC_O     = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(SRCS))
 
-NAME      = webserv
+NAME      = libftcpp
 
 RM        = rm -f
 CYAN      = "\033[36m"

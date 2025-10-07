@@ -2,6 +2,8 @@
 
 int	main(void)
 {
-	std::cout << "15 with gradient is : " << getGradientColor(15, 5, 25) << "15" << std::endl;
+	bool res = HasExtensionFile("niggatxt", "txt");
+
+	std::cout << "res = " << (res ? "true" : "false") << std::endl;
 	return 0;
 }
