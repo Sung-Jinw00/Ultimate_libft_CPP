@@ -51,7 +51,7 @@ cd Ultimate_libft_CPP
 The project includes a Makefile for easy compilation. The makefile compile in 98 version.
 You can run tests through your own main test file or link the library directly in other C++ projects.
 
-make
+make  
 ./libftcpp
 
 ---
