@@ -56,6 +56,6 @@ make
 
 ---
 
-##🧑‍💻 Author
+## 🧑‍💻 Author
 
 Created and maintained by @Sung_Jinw00
