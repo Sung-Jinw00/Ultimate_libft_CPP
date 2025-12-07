@@ -9,7 +9,7 @@ SRCS      = main.cpp $(shell find srcs -name "*.cpp")
 OBJ_DIR   = obj
 SRC_O     = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(SRCS))
 
-NAME      = libftcpp
+NAME      = libftcpp.a
 
 RM        = rm -f
 CYAN      = "\033[36m"
@@ -19,11 +19,13 @@ RESET     = "\033[0m"
 
 all: $(NAME)
 
+# Création de la librairie statique
 $(NAME): $(SRC_O)
-	@echo $(CYAN)"Creation of $(NAME) executable..."$(RESET)
-	@$(CXX) $(CXXFLAGS) $(SRC_O) -o $(NAME)
-	@echo $(GREEN) "\"$(NAME)\" executable created !"$(RESET)
+	@echo $(CYAN)"Creation of $(NAME) library..."$(RESET)
+	@ar rcs $(NAME) $(SRC_O)
+	@echo $(GREEN) "\"$(NAME)\" library created !"$(RESET)
 
+# Compilation des objets
 $(OBJ_DIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
 	@echo $(CYAN)"Compilation of $<..."$(RESET)
@@ -34,7 +36,7 @@ clean:
 	@$(RM) -r $(OBJ_DIR)
 
 fclean: clean
-	@echo $(CYAN)"Executable suppression..."$(RESET)
+	@echo $(CYAN)"Library suppression..."$(RESET)
 	@$(RM) $(NAME)
 
 re: fclean all

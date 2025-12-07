@@ -4,7 +4,7 @@ void	stripe(std::string &s, StripSide side)
 {
 	size_t start = 0;
 
-	if (side == StripSide::LEFT || side == StripSide::BOTH)
+	if (side == LEFT || side == BOTH)
 		while (start < s.size() && std::isspace(s[start]))
 			start++;
 	if (start == s.size())
@@ -13,7 +13,7 @@ void	stripe(std::string &s, StripSide side)
 		return ;
 	}
 	size_t end = s.size() - 1;
-	if (side == StripSide::RIGHT || side == StripSide::BOTH)
+	if (side == RIGHT || side == BOTH)
 		while (end > start && std::isspace(s[end]))
 			end--;
 	s = s.substr(start, end - start + 1);
@@ -22,7 +22,7 @@ void	stripe(std::string &s, StripSide side)
 void stripe(std::string &s, char c, StripSide side)
 {
 	size_t start = 0;
-	if (side == StripSide::LEFT || side == StripSide::BOTH)
+	if (side == LEFT || side == BOTH)
 		while (start < s.size() && s[start] == c)
 			start++;
 
@@ -33,7 +33,7 @@ void stripe(std::string &s, char c, StripSide side)
 	}
 
 	size_t end = s.size() - 1;
-	if (side == StripSide::RIGHT || side == StripSide::BOTH)
+	if (side == RIGHT || side == BOTH)
 		while (end > start && s[end] == c)
 			end--;
 
@@ -42,16 +42,16 @@ void stripe(std::string &s, char c, StripSide side)
 
 static bool inSet(char c, const std::string &set)
 {
-	for (char s : set)
-		if (c == s)
-			return true;
+	for (size_t i = 0; i < set.size(); ++i)
+        if (c == set[i])
+            return true;
 	return false;
 }
 
 void stripe(std::string &s, const std::string &set, StripSide side)
 {
 	size_t start = 0;
-	if (side == StripSide::LEFT || side == StripSide::BOTH)
+	if (side == LEFT || side == BOTH)
 		while (start < s.size() && inSet(s[start], set))
 			start++;
 
@@ -62,7 +62,7 @@ void stripe(std::string &s, const std::string &set, StripSide side)
 	}
 
 	size_t end = s.size() - 1;
-	if (side == StripSide::RIGHT || side == StripSide::BOTH)
+	if (side == RIGHT || side == BOTH)
 		while (end > start && inSet(s[end], set))
 			end--;
 
