@@ -40,7 +40,7 @@ This library includes a wide variety of tools and utilities for C++ development,
 Clone the repository directly on your Linux-based system:
 
 ```bash
-git clone git@github.com:Sung-Jinw00/Ultimate_libft_CPP.git Ultimate_libft_CPP
+git clone git@github.com:Louis-Cagnion/Ultimate_libft_CPP.git Ultimate_libft_CPP
 cd Ultimate_libft_CPP
 ```
 
@@ -58,4 +58,4 @@ make
 
 ## 🧑‍💻 Author
 
-Created and maintained by @Sung_Jinw00
+Created and maintained by @Louis-Cagnion
